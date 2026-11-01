@@ -11,6 +11,14 @@
 <header class="navbar">
     <div class="container navbar-inner">
         <a href="{{ route('dashboard') }}" class="brand">Siaga Karhutla</a>
+        <nav class="navbar-nav">
+            @if (Auth::user()->role->value === 'pelapor')
+                <a href="{{ route('reports.index') }}">Laporan Saya</a>
+                <a href="{{ route('reports.create') }}">Buat Laporan</a>
+            @else
+                <a href="{{ route('reports.index') }}">Daftar Laporan</a>
+            @endif
+        </nav>
         <div class="navbar-right">
             <span class="user-info">
                 {{ Auth::user()->name }}

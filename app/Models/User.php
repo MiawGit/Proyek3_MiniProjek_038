@@ -54,4 +54,9 @@ class User extends Authenticatable
 
         return $this->role === $expected;
     }
+
+    public function reports(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Report::class);
+    }
 }

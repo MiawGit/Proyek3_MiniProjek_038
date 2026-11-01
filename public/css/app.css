@@ -27,7 +27,10 @@ body {
     color: #fff;
     padding: 12px 0;
 }
-.navbar-inner { display: flex; justify-content: space-between; align-items: center; }
+.navbar-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.navbar-nav { display: flex; gap: 14px; align-items: center; }
+.navbar-nav a { color: rgba(255, 255, 255, .85); text-decoration: none; font-size: .9rem; }
+.navbar-nav a:hover { color: #fff; }
 .brand { color: #fff; font-weight: 700; font-size: 1.15rem; text-decoration: none; }
 .navbar-right { display: flex; align-items: center; gap: 12px; }
 .user-info { display: flex; align-items: center; gap: 8px; font-size: .9rem; }
@@ -109,3 +112,33 @@ a { color: var(--hijau); }
 .alert-success { background: var(--hijau-muda); color: var(--hijau-tua); border: 1px solid #bfe3cd; }
 .alert-error { background: var(--merah-muda); color: var(--merah); border: 1px solid #f5c2bc; }
 .error-list { margin: 0; padding-left: 18px; }
+
+/* Tabel */
+.table-card { padding: 0; overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.table th, .table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--garis); }
+.table th { background: #fafbfa; font-size: .82rem; text-transform: uppercase; color: var(--abu); }
+.table tr:last-child td { border-bottom: none; }
+.text-right { text-align: right; }
+.detail-table th { width: 200px; vertical-align: top; }
+.detail-table th, .detail-table td { border-bottom: 1px solid var(--garis); }
+.pagination-wrap { padding: 12px 14px; }
+.pagination-wrap nav div[role="navigation"] { display: flex; gap: 6px; flex-wrap: wrap; }
+.pagination-wrap a, .pagination-wrap span { padding: 5px 10px; border: 1px solid var(--garis); border-radius: 6px; font-size: .85rem; text-decoration: none; color: #1d2329; }
+.pagination-wrap span[aria-current="page"] span { background: var(--hijau); color: #fff; border-color: var(--hijau); }
+.pagination-wrap span[aria-disabled="true"] { color: #b6bcc4; }
+
+/* Lain-lain */
+.row-between { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.action-bar { margin-top: 18px; display: flex; gap: 10px; align-items: center; }
+.btn-secondary { background: #eef1f0; color: #1d2329; border-color: var(--garis); }
+.btn-secondary:hover { background: #e2e7e4; }
+.btn-ghost { background: transparent; color: var(--abu); border-color: var(--garis); }
+.btn-ghost:hover { background: #eef1f0; }
+
+/* Badge status laporan */
+.badge-baru { background: #e3f0fd; color: #1c5f9e; }
+.badge-diperiksa { background: #fdf3d8; color: #8a6d1a; }
+.badge-perlu { background: #fde8d7; color: #b45309; }
+.badge-diteruskan { background: #eee7fb; color: #6d3fb5; }
+.badge-selesai { background: var(--hijau-muda); color: var(--hijau-tua); }
