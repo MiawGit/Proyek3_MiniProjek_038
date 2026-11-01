@@ -1,10 +1,14 @@
 <?php
 
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\AreaSummaryController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RekapController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReportProgressController;
+use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,4 +37,22 @@ Route::middleware('auth')->group(function () {
     Route::get('/reports/{report}', [ReportController::class, 'show'])->name('reports.show');
     Route::get('/reports/{report}/edit', [ReportController::class, 'edit'])->name('reports.edit');
     Route::put('/reports/{report}', [ReportController::class, 'update'])->name('reports.update');
+
+    Route::get('/areas/{area}/summary', [AreaSummaryController::class, 'show'])->name('areas.summary');
+
+    Route::middleware('role:relawan,koordinator')->group(function () {
+        Route::get('/rekap', [RekapController::class, 'index'])->name('rekap.index');
+    });
+
+    Route::middleware('role:koordinator')->group(function () {
+        Route::get('/areas', [AreaController::class, 'index'])->name('areas.index');
+        Route::post('/areas', [AreaController::class, 'store'])->name('areas.store');
+        Route::get('/areas/{area}/edit', [AreaController::class, 'edit'])->name('areas.edit');
+        Route::put('/areas/{area}', [AreaController::class, 'update'])->name('areas.update');
+        Route::delete('/areas/{area}', [AreaController::class, 'destroy'])->name('areas.destroy');
+
+        Route::get('/users', [UserAdminController::class, 'index'])->name('users.index');
+        Route::post('/users', [UserAdminController::class, 'store'])->name('users.store');
+        Route::delete('/users/{user}', [UserAdminController::class, 'destroy'])->name('users.destroy');
+    });
 });

@@ -160,3 +160,16 @@ a { color: var(--hijau); }
 .status-form:last-child { margin-bottom: 0; }
 .grow { flex: 1; }
 .self-end { align-self: flex-end; margin-bottom: 0; }
+
+/* Filter bar & kartu statistik */
+.filter-card { margin-bottom: 1rem; }
+.filter-form { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; }
+.filter-form .form-group { margin-bottom: 0; }
+.stat-grid { margin-bottom: 1rem; }
+.stat-card { text-align: center; }
+.stat-number { display: block; font-size: 2rem; font-weight: 700; color: var(--hijau-tua, #1b5e3b); }
+
+/* Ringkasan area di dashboard */
+.area-summary { margin-top: .6rem; }
+.summary-list { list-style: none; margin: .4rem 0; padding: 0; }
+.summary-list li { padding: .15rem 0; }

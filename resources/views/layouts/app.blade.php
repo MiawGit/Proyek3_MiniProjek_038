@@ -17,6 +17,11 @@
                 <a href="{{ route('reports.create') }}">Buat Laporan</a>
             @else
                 <a href="{{ route('reports.index') }}">Daftar Laporan</a>
+                <a href="{{ route('rekap.index') }}">Rekap</a>
+                @if (Auth::user()->role->value === 'koordinator')
+                    <a href="{{ route('areas.index') }}">Area</a>
+                    <a href="{{ route('users.index') }}">Akun</a>
+                @endif
             @endif
         </nav>
         <div class="navbar-right">
@@ -50,5 +55,6 @@
 
     @yield('content')
 </main>
+@stack('scripts')
 </body>
 </html>

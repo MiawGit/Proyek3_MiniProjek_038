@@ -13,9 +13,39 @@
     @endif
 </div>
 
+<div class="card filter-card">
+    <form method="GET" action="{{ route('reports.index') }}" class="filter-form">
+        <div class="form-group grow">
+            <label for="q">Kata Kunci</label>
+            <input type="text" name="q" id="q" placeholder="Cari deskripsi laporan..." value="{{ $filters['q'] ?? '' }}">
+        </div>
+        <div class="form-group">
+            <label for="area_id">Area</label>
+            <select name="area_id" id="area_id">
+                <option value="">Semua Area</option>
+                @foreach ($areas as $area)
+                    <option value="{{ $area->id }}" @selected(($filters['area_id'] ?? '') == $area->id)>{{ $area->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="">Semua Status</option>
+                @foreach ($statuses as $status)
+                    <option value="{{ $status->value }}" @selected(($filters['status'] ?? '') == $status->value)>{{ $status->label() }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group self-end">
+            <button type="submit" class="btn btn-secondary">Terapkan Filter</button>
+        </div>
+    </form>
+</div>
+
 @if ($reports->isEmpty())
     <div class="card">
-        <p class="muted">Belum ada laporan.</p>
+        <p class="muted">Tidak ada laporan yang cocok.</p>
     </div>
 @else
     <div class="card table-card">

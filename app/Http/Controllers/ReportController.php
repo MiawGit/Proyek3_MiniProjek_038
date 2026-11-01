@@ -29,6 +29,9 @@ class ReportController extends Controller
 
         $reports = Report::query()
             ->when($request->user()->hasRole(Role::Pelapor), fn ($q) => $q->where('user_id', $request->user()->id))
+            ->when($request->filled('q'), fn ($q) => $q->where('description', 'like', '%' . $request->input('q') . '%'))
+            ->when($request->filled('area_id'), fn ($q) => $q->where('area_id', $request->input('area_id')))
+            ->when($request->filled('status'), fn ($q) => $q->where('status', $request->input('status')))
             ->with(['user', 'area'])
             ->latest()
             ->paginate(10)
@@ -37,6 +40,9 @@ class ReportController extends Controller
         return view('reports.index', [
             'reports' => $reports,
             'isPelapor' => $request->user()->hasRole(Role::Pelapor),
+            'areas' => Area::orderBy('name')->get(),
+            'statuses' => ReportStatus::cases(),
+            'filters' => $request->only(['q', 'area_id', 'status']),
         ]);
     }
 
