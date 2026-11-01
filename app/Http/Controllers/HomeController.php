@@ -19,7 +19,7 @@ class HomeController extends Controller
         $reports = Report::with('area')
             ->latest('incident_at')
             ->take(6)
-            ->get(['id', 'area_id', 'description', 'incident_at', 'status']);
+            ->get(['id', 'user_id', 'area_id', 'description', 'incident_at', 'status']);
 
         return view('landing', compact('stats', 'reports'));
     }

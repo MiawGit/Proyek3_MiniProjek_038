@@ -102,7 +102,7 @@
     @else
         <div class="report-grid">
             @foreach ($reports as $report)
-                @php($cardUrl = auth()->check() ? route('reports.show', $report) : null)
+                @php($cardUrl = auth()->check() && auth()->user()->can('view', $report) ? route('reports.show', $report) : null)
                 <article class="card report-card">
                     <div class="report-card-top">
                         <span class="badge {{ $report->status->badgeClass() }}">{{ $report->status->label() }}</span>
