@@ -36,6 +36,20 @@
         </div>
     </div>
 </header>
+@else
+<header class="navbar">
+    <div class="container navbar-inner">
+        <a href="{{ route('home') }}" class="brand">Siaga Karhutla</a>
+        <nav class="navbar-nav">
+            <a href="{{ route('home') }}">Beranda</a>
+            <a href="{{ route('home') }}#laporan-terbaru">Laporan Terbaru</a>
+        </nav>
+        <div class="navbar-right">
+            <a href="{{ route('login') }}" class="btn btn-outline btn-sm">Masuk</a>
+            <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Daftar</a>
+        </div>
+    </div>
+</header>
 @endauth
 
 <main class="container">

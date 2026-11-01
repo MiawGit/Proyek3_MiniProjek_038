@@ -5,17 +5,14 @@ use App\Http\Controllers\AreaSummaryController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RekapController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReportProgressController;
 use App\Http\Controllers\UserAdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return auth()->check()
-        ? redirect()->route('dashboard')
-        : redirect()->route('login');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

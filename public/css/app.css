@@ -173,3 +173,58 @@ a { color: var(--hijau); }
 .area-summary { margin-top: .6rem; }
 .summary-list { list-style: none; margin: .4rem 0; padding: 0; }
 .summary-list li { padding: .15rem 0; }
+
+/* Beranda publik (landing) */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+    align-items: center;
+    padding: 34px 0 8px;
+}
+.hero-kicker {
+    margin: 0 0 6px;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--hijau);
+}
+.hero h1 { margin: 0 0 12px; font-size: 1.9rem; line-height: 1.25; color: var(--hijau-tua); }
+.hero-accent { color: #d97706; }
+.hero-lead { margin: 0 0 14px; color: #3d4a41; }
+.hero-points { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 8px; }
+.hero-points li { position: relative; padding-left: 20px; color: #3d4a41; font-size: .94rem; }
+.hero-points li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: .58em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d97706;
+}
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.hero .btn-outline { color: var(--hijau-tua); border-color: var(--hijau-tua); background: transparent; }
+.hero .btn-outline:hover { background: var(--hijau-muda); }
+.hero-img { width: 100%; border-radius: 12px; border: 1px solid var(--garis); display: block; }
+.landing-stats { margin-top: 26px; }
+.stat-label { display: block; color: var(--abu); font-size: .88rem; }
+.landing-section { margin-top: 30px; }
+.section-head h2 { margin: 0 0 6px; color: var(--hijau-tua); }
+.report-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-top: 14px; }
+.report-card { display: flex; flex-direction: column; gap: 6px; }
+.report-card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.report-card-date { font-size: .8rem; color: var(--abu); }
+.report-card-area { margin: 0; font-size: 1.02rem; color: var(--hijau-tua); }
+.report-card-desc { margin: 0; font-size: .9rem; color: #3d4a41; flex: 1; }
+.report-card-link { font-size: .88rem; font-weight: 600; text-decoration: none; }
+.empty-state { text-align: center; }
+.cta-banner { margin-top: 30px; text-align: center; background: var(--hijau-tua); border-color: var(--hijau-tua); color: #fff; }
+.cta-banner h2 { margin-top: 0; }
+.cta-banner p { color: rgba(255, 255, 255, .85); }
+.cta-banner .hero-actions { justify-content: center; }
+.cta-banner .btn-primary { background: #fff; color: var(--hijau-tua); }
+.cta-banner .btn-primary:hover { background: var(--hijau-muda); }
+@media (max-width: 720px) { .hero { grid-template-columns: 1fr; } }
