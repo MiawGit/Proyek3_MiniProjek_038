@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ReportProgressController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/reports/create', [ReportController::class, 'create'])->name('reports.create')->middleware('role:pelapor');
     Route::post('/reports', [ReportController::class, 'store'])->name('reports.store')->middleware('role:pelapor');
     Route::get('/reports/{report}/evidence', [ReportController::class, 'evidence'])->name('reports.evidence');
+    Route::post('/reports/{report}/notes', [ReportProgressController::class, 'storeNote'])->name('reports.notes.store')->middleware('role:relawan,koordinator');
+    Route::post('/reports/{report}/status', [ReportProgressController::class, 'updateStatus'])->name('reports.status.update')->middleware('role:relawan,koordinator');
     Route::get('/reports/{report}', [ReportController::class, 'show'])->name('reports.show');
     Route::get('/reports/{report}/edit', [ReportController::class, 'edit'])->name('reports.edit');
     Route::put('/reports/{report}', [ReportController::class, 'update'])->name('reports.update');

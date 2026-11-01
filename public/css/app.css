@@ -142,3 +142,21 @@ a { color: var(--hijau); }
 .badge-perlu { background: #fde8d7; color: #b45309; }
 .badge-diteruskan { background: #eee7fb; color: #6d3fb5; }
 .badge-selesai { background: var(--hijau-muda); color: var(--hijau-tua); }
+
+/* Timeline riwayat status */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline-item { display: flex; align-items: center; gap: .6rem; padding: .55rem 0; border-bottom: 1px dashed var(--border, #d8e0d0); flex-wrap: wrap; }
+.timeline-item:last-child { border-bottom: none; }
+.timeline .arrow { color: var(--muted-color, #6b7a68); font-weight: 700; }
+
+/* Catatan peninjauan */
+.note-list { list-style: none; margin: 0 0 1rem; padding: 0; }
+.note-item { background: #f6f8f3; border-left: 4px solid var(--hijau, #2e7d4f); border-radius: .4rem; padding: .7rem 1rem; margin-bottom: .6rem; }
+.note-item p { margin: 0 0 .3rem; }
+.note-form { margin-top: .5rem; }
+
+/* Form tindak lanjut */
+.status-form { margin-bottom: .8rem; }
+.status-form:last-child { margin-bottom: 0; }
+.grow { flex: 1; }
+.self-end { align-self: flex-end; margin-bottom: 0; }

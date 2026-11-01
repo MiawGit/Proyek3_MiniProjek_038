@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\ReportStatus;
 use App\Enums\Role;
 use App\Models\Area;
 use App\Models\Report;
@@ -74,11 +75,16 @@ class ReportController extends Controller
     {
         Gate::authorize('view', $report);
 
+        $allowed = ReportStatus::nextFor($request->user()->role);
+
         return view('reports.show', [
             'report' => $report->load(['user', 'area', 'forwarder']),
             'canUpdate' => $request->user()->can('update', $report),
             'isRelawanOrKoordinator' => $request->user()->hasRole(Role::Relawan)
                 || $request->user()->hasRole(Role::Koordinator),
+            'reviewNotes' => $report->reviewNotes()->with('user')->latest()->get(),
+            'statusChanges' => $report->statusChanges()->with('user')->latest()->get(),
+            'allowedTransitions' => $allowed[$report->status->value] ?? [],
         ]);
     }
 
