@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Enums\ReportStatus;
-use App\Models\Area;
 use App\Models\Report;
 
 class HomeController extends Controller
@@ -12,9 +11,9 @@ class HomeController extends Controller
     {
         $stats = [
             'total' => Report::count(),
+            'baru' => Report::where('status', ReportStatus::Baru)->count(),
             'selesai' => Report::where('status', ReportStatus::Selesai)->count(),
             'perlu' => Report::where('status', ReportStatus::PerluTindakLanjut)->count(),
-            'area' => Area::count(),
         ];
 
         $reports = Report::with('area')

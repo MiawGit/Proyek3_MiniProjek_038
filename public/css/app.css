@@ -209,8 +209,39 @@ a { color: var(--hijau); }
 .hero .btn-outline { color: var(--hijau-tua); border-color: var(--hijau-tua); background: transparent; }
 .hero .btn-outline:hover { background: var(--hijau-muda); }
 .hero-img { width: 100%; border-radius: 12px; border: 1px solid var(--garis); display: block; }
-.landing-stats { margin-top: 26px; }
-.stat-label { display: block; color: var(--abu); font-size: .88rem; }
+
+/* Panel statistik gelap (beranda) */
+.dark-stats {
+    margin-top: 26px;
+    background: #0f172a;
+    border-radius: 14px;
+    padding: 26px;
+    color: #fff;
+}
+.dark-stats h2 { margin: 0 0 4px; font-size: 1.25rem; }
+.dark-stats-sub { margin: 0 0 18px; color: #94a3b8; font-size: .9rem; }
+.dstat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.dstat-card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 16px 18px;
+}
+.dstat-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.dstat-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.dstat-icon svg { width: 20px; height: 20px; }
+.dstat-icon-blue { background: rgba(59, 130, 246, .15); color: #60a5fa; }
+.dstat-icon-orange { background: rgba(249, 115, 22, .15); color: #fb923c; }
+.dstat-icon-green { background: rgba(34, 197, 94, .15); color: #4ade80; }
+.dstat-icon-red { background: rgba(239, 68, 68, .15); color: #f87171; }
+.dstat-badge { font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+.dstat-badge-blue { background: #1e3a8a; color: #93c5fd; }
+.dstat-badge-orange { background: #7c2d12; color: #fdba74; }
+.dstat-badge-green { background: #14532d; color: #86efac; }
+.dstat-badge-red { background: #7f1d1d; color: #fca5a5; }
+.dstat-number { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+.dstat-label { display: block; margin-top: 2px; color: #94a3b8; font-size: .88rem; }
+@media (max-width: 640px) { .dstat-grid { grid-template-columns: 1fr; } }
 .landing-section { margin-top: 30px; }
 .section-head h2 { margin: 0 0 6px; color: var(--hijau-tua); }
 .report-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-top: 14px; }

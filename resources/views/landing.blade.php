@@ -37,22 +37,50 @@
     </div>
 </section>
 
-<section class="stat-grid landing-stats">
-    <div class="card stat-card">
-        <span class="stat-number">{{ $stats['total'] }}</span>
-        <span class="stat-label">Laporan Diterima</span>
-    </div>
-    <div class="card stat-card">
-        <span class="stat-number">{{ $stats['selesai'] }}</span>
-        <span class="stat-label">Laporan Selesai Ditangani</span>
-    </div>
-    <div class="card stat-card">
-        <span class="stat-number">{{ $stats['perlu'] }}</span>
-        <span class="stat-label">Perlu Tindak Lanjut</span>
-    </div>
-    <div class="card stat-card">
-        <span class="stat-number">{{ $stats['area'] }}</span>
-        <span class="stat-label">Area Terpantau</span>
+<section class="dark-stats">
+    <h2>Gambaran Laporan Kebakaran</h2>
+    <p class="dark-stats-sub">Statistik laporan yang masuk dan penanganannya saat ini.</p>
+    <div class="dstat-grid">
+        <div class="dstat-card">
+            <div class="dstat-top">
+                <span class="dstat-icon dstat-icon-blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h8"/></svg>
+                </span>
+                <span class="dstat-badge dstat-badge-blue">Total</span>
+            </div>
+            <span class="dstat-number">{{ $stats['total'] }}</span>
+            <span class="dstat-label">Total laporan diterima</span>
+        </div>
+        <div class="dstat-card">
+            <div class="dstat-top">
+                <span class="dstat-icon dstat-icon-orange">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </span>
+                <span class="dstat-badge dstat-badge-orange">Proses</span>
+            </div>
+            <span class="dstat-number">{{ $stats['baru'] }}</span>
+            <span class="dstat-label">Menunggu verifikasi</span>
+        </div>
+        <div class="dstat-card">
+            <div class="dstat-top">
+                <span class="dstat-icon dstat-icon-green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <span class="dstat-badge dstat-badge-green">Selesai</span>
+            </div>
+            <span class="dstat-number">{{ $stats['selesai'] }}</span>
+            <span class="dstat-label">Laporan ditindaklanjuti</span>
+        </div>
+        <div class="dstat-card">
+            <div class="dstat-top">
+                <span class="dstat-icon dstat-icon-red">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                </span>
+                <span class="dstat-badge dstat-badge-red">Perhatian</span>
+            </div>
+            <span class="dstat-number">{{ $stats['perlu'] }}</span>
+            <span class="dstat-label">Laporan perlu perhatian</span>
+        </div>
     </div>
 </section>
 
