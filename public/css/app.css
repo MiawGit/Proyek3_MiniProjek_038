@@ -20,6 +20,7 @@ body {
 }
 
 .container { max-width: 1024px; margin: 0 auto; padding: 0 16px; }
+main { padding-bottom: 48px; }
 
 /* Navbar */
 .navbar {
@@ -236,17 +237,17 @@ a { color: var(--hijau); }
 .dstat-number { font-size: 2rem; font-weight: 700; line-height: 1.1; color: var(--hijau-tua); }
 .dstat-label { display: block; margin-top: 2px; color: var(--abu); font-size: .88rem; }
 @media (max-width: 640px) { .dstat-grid { grid-template-columns: 1fr; } }
-.landing-section { margin-top: 30px; }
+.landing-section { margin-top: 36px; }
 .section-head h2 { margin: 0 0 6px; color: var(--hijau-tua); }
-.report-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; margin-top: 14px; }
-.report-card { display: flex; flex-direction: column; gap: 6px; }
+.report-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 18px; }
+.report-card { display: flex; flex-direction: column; gap: 8px; }
 .report-card-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
 .report-card-date { font-size: .8rem; color: var(--abu); }
 .report-card-area { margin: 0; font-size: 1.02rem; color: var(--hijau-tua); }
 .report-card-desc { margin: 0; font-size: .9rem; color: #3d4a41; flex: 1; }
 .report-card-link { font-size: .88rem; font-weight: 600; text-decoration: none; }
 .empty-state { text-align: center; }
-.cta-banner { margin-top: 30px; text-align: center; background: var(--hijau-tua); border-color: var(--hijau-tua); color: #fff; }
+.cta-banner { margin-top: 40px; text-align: center; background: var(--hijau-tua); border-color: var(--hijau-tua); color: #fff; }
 .cta-banner h2 { margin-top: 0; }
 .cta-banner p { color: rgba(255, 255, 255, .85); }
 .cta-banner .hero-actions { justify-content: center; }
