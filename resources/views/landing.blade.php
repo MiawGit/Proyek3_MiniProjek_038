@@ -4,6 +4,9 @@
 
 @section('content')
 <section class="hero">
+    <div class="hero-media">
+        <img src="{{ asset('images/hero-karhutla.png') }}" alt="Ilustrasi kebakaran hutan dan lahan yang menghanguskan pepohonan serta menimbulkan asap tebal" class="hero-img">
+    </div>
     <div class="hero-text">
         <p class="hero-kicker">Lindungi Hutan, Cegah Karhutla</p>
         <h1>Kebakaran Hutan Itu <span class="hero-accent">Berbahaya</span>. Jangan Diam Saja</h1>
@@ -34,14 +37,11 @@
             <a href="#laporan-terbaru" class="btn btn-ghost">Lihat Laporan Terbaru</a>
         </div>
     </div>
-    <div class="hero-media">
-        <img src="{{ asset('images/hero-karhutla.png') }}" alt="Ilustrasi kebakaran hutan dan lahan yang menghanguskan pepohonan serta menimbulkan asap tebal" class="hero-img">
-    </div>
 </section>
 
-<section class="dark-stats">
+<section class="stats-panel">
     <h2>Gambaran Laporan Kebakaran</h2>
-    <p class="dark-stats-sub">Statistik laporan yang masuk dan penanganannya saat ini.</p>
+    <p class="stats-sub">Statistik laporan yang masuk dan penanganannya saat ini.</p>
     <div class="dstat-grid">
         <div class="dstat-card">
             <div class="dstat-top">
