@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Kelola Area — Siaga Karhutla')
+@section('title', 'Kelola Area | Siaga Karhutla')
 
 @section('content')
 <div class="page-head">
@@ -44,7 +44,7 @@
                 <tr>
                     <td>{{ $area->id }}</td>
                     <td>{{ $area->name }}</td>
-                    <td class="muted">{{ $area->description ?? '—' }}</td>
+                    <td class="muted">{{ $area->description ?? 'Tidak ada deskripsi' }}</td>
                     <td>{{ $area->reports_count }}</td>
                     <td class="text-right">
                         <a href="{{ route('areas.edit', $area) }}" class="btn btn-secondary btn-sm">Edit</a>

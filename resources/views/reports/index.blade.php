@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $isPelapor ? 'Laporan Saya — Siaga Karhutla' : 'Daftar Laporan — Siaga Karhutla')
+@section('title', $isPelapor ? 'Laporan Saya | Siaga Karhutla' : 'Daftar Laporan | Siaga Karhutla')
 
 @section('content')
 <div class="page-head row-between">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Perbaiki Laporan #' . $report->id . ' — Siaga Karhutla')
+@section('title', 'Perbaiki Laporan #' . $report->id . ' | Siaga Karhutla')
 
 @section('content')
 <div class="page-head">
@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="evidence">Bukti Pendukung Baru (JPG/PNG/PDF, maksimal 2 MB — kosongkan jika tidak diganti)</label>
+            <label for="evidence">Bukti Pendukung Baru (JPG/PNG/PDF, maksimal 2 MB, kosongkan jika tidak diganti)</label>
             <input type="file" name="evidence" id="evidence" accept=".jpg,.jpeg,.png,.pdf">
         </div>
         <div class="form-group">

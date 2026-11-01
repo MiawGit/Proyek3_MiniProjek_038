@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Laporan #' . $report->id . ' — Siaga Karhutla')
+@section('title', 'Detail Laporan #' . $report->id . ' | Siaga Karhutla')
 
 @section('content')
 <div class="page-head row-between">
@@ -89,7 +89,7 @@
                     <span class="badge {{ \App\Enums\ReportStatus::from($change->from_status)->badgeClass() }}">{{ \App\Enums\ReportStatus::from($change->from_status)->label() }}</span>
                     <span class="arrow">→</span>
                     <span class="badge {{ \App\Enums\ReportStatus::from($change->to_status)->badgeClass() }}">{{ \App\Enums\ReportStatus::from($change->to_status)->label() }}</span>
-                    <span class="muted">oleh {{ $change->user?->name ?? 'sistem' }} — {{ $change->created_at->format('d M Y H:i') }}</span>
+                    <span class="muted">oleh {{ $change->user?->name ?? 'sistem' }} pada {{ $change->created_at->format('d M Y H:i') }}</span>
                 </li>
             @endforeach
         </ul>
@@ -105,7 +105,7 @@
             @foreach ($reviewNotes as $note)
                 <li class="note-item">
                     <p>{{ $note->content }}</p>
-                    <span class="muted">— {{ $note->user->name }}, {{ $note->created_at->format('d M Y H:i') }}</span>
+                    <span class="muted">{{ $note->user->name }}, {{ $note->created_at->format('d M Y H:i') }}</span>
                 </li>
             @endforeach
         </ul>

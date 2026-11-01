@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Buat Laporan — Siaga Karhutla')
+@section('title', 'Buat Laporan | Siaga Karhutla')
 
 @section('content')
 <div class="page-head">
@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="area_id">Area / Wilayah</label>
             <select name="area_id" id="area_id" required>
-                <option value="">— pilih area —</option>
+                <option value="">Pilih area</option>
                 @foreach ($areas as $area)
                     <option value="{{ $area->id }}" @selected(old('area_id') == $area->id)>{{ $area->name }}</option>
                 @endforeach

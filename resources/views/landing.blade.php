@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Siaga Karhutla — Pantau & Laporkan Kebakaran Hutan')
+@section('title', 'Siaga Karhutla: Pantau & Laporkan Kebakaran Hutan')
 
 @section('content')
 <section class="hero">
     <div class="hero-text">
         <p class="hero-kicker">Lindungi Hutan, Cegah Karhutla</p>
-        <h1>Kebakaran Hutan Itu <span class="hero-accent">Berbahaya</span> — Jangan Diam Saja</h1>
+        <h1>Kebakaran Hutan Itu <span class="hero-accent">Berbahaya</span>. Jangan Diam Saja</h1>
         <p class="hero-lead">
             Kebakaran hutan dan lahan (karhutla) tidak hanya menghanguskan pepohonan.
             Asapnya meracuni udara, merusak kesehatan, memusnahkan habitat satwa, dan
@@ -15,15 +15,17 @@
         </p>
         <ul class="hero-points">
             <li><strong>Asap beracun</strong> memicu infeksi saluran pernapasan (ISPA) dan gangguan kesehatan serius.</li>
-            <li><strong>Habitat satwa musnah</strong> — banyak spesies kehilangan rumah dan sumber makanannya.</li>
+            <li><strong>Habitat satwa musnah</strong>: banyak spesies kehilangan rumah dan sumber makanannya.</li>
             <li><strong>Kerugian besar</strong> bagi lingkungan, ekonomi warga, dan ekosistem yang butuh puluhan tahun pulih.</li>
         </ul>
         <div class="hero-actions">
             @auth
                 @if (Auth::user()->role->value === 'pelapor')
                     <a href="{{ route('reports.create') }}" class="btn btn-primary">Buat Laporan</a>
+                    <a href="{{ route('reports.index') }}" class="btn btn-outline">Laporan Saya</a>
                 @else
                     <a href="{{ route('reports.index') }}" class="btn btn-primary">Lihat Laporan</a>
+                    <a href="{{ route('rekap.index') }}" class="btn btn-outline">Rekap</a>
                 @endif
             @else
                 <a href="{{ route('login') }}" class="btn btn-primary">Buat Laporan</a>
