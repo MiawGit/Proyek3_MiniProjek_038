@@ -11,19 +11,6 @@
 <header class="navbar">
     <div class="container navbar-inner">
         <a href="{{ route('dashboard') }}" class="brand">Siaga Karhutla</a>
-        <nav class="navbar-nav">
-            @if (Auth::user()->role->value === 'pelapor')
-                <a href="{{ route('reports.index') }}">Laporan Saya</a>
-                <a href="{{ route('reports.create') }}">Buat Laporan</a>
-            @else
-                <a href="{{ route('reports.index') }}">Daftar Laporan</a>
-                <a href="{{ route('rekap.index') }}">Rekap</a>
-                @if (Auth::user()->role->value === 'koordinator')
-                    <a href="{{ route('areas.index') }}">Area</a>
-                    <a href="{{ route('users.index') }}">Akun</a>
-                @endif
-            @endif
-        </nav>
         <div class="navbar-right">
             <span class="user-info">
                 {{ Auth::user()->name }}
@@ -33,20 +20,6 @@
                 @csrf
                 <button type="submit" class="btn btn-outline btn-sm">Keluar</button>
             </form>
-        </div>
-    </div>
-</header>
-@else
-<header class="navbar">
-    <div class="container navbar-inner">
-        <a href="{{ route('home') }}" class="brand">Siaga Karhutla</a>
-        <nav class="navbar-nav">
-            <a href="{{ route('home') }}">Beranda</a>
-            <a href="{{ route('home') }}#laporan-terbaru">Laporan Terbaru</a>
-        </nav>
-        <div class="navbar-right">
-            <a href="{{ route('login') }}" class="btn btn-outline btn-sm">Masuk</a>
-            <a href="{{ route('register') }}" class="btn btn-primary btn-sm">Daftar</a>
         </div>
     </div>
 </header>
@@ -69,6 +42,5 @@
 
     @yield('content')
 </main>
-@stack('scripts')
 </body>
 </html>

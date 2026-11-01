@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Area;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,7 +11,6 @@ class DashboardController extends Controller
     {
         return view('dashboard', [
             'user' => $request->user(),
-            'areas' => Area::orderBy('name')->get(),
         ]);
     }
 }
